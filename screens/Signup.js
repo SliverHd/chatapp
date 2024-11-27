@@ -12,8 +12,8 @@ export default function Signup({ navigation }) {
 const onHandleSignup = () => {
     if (email !== '' && password !== '') {
   createUserWithEmailAndPassword(auth, email, password)
-        .then(() => console.log('Signup success'))
-        .catch((err) => Alert.alert("Login error", err.message));
+        .then(() => console.log('Đăng ký thành công'))
+        .catch((err) => Alert.alert("Lỗi đăng ký", err.message));
     }
   };
   
@@ -22,10 +22,10 @@ const onHandleSignup = () => {
       <Image source={backImage} style={styles.backImage} />
       <View style={styles.whiteSheet} />
       <SafeAreaView style={styles.form}>
-        <Text style={styles.title}>Sign Up</Text>
+        <Text style={styles.title}>Đăng ký</Text>
          <TextInput
         style={styles.input}
-        placeholder="Enter email"
+        placeholder="Nhập email"
         autoCapitalize="none"
         keyboardType="email-address"
         textContentType="emailAddress"
@@ -35,7 +35,7 @@ const onHandleSignup = () => {
       />
       <TextInput
         style={styles.input}
-        placeholder="Enter password"
+        placeholder="Nhập mật khẩu"
         autoCapitalize="none"
         autoCorrect={false}
         secureTextEntry={true}
@@ -44,12 +44,12 @@ const onHandleSignup = () => {
         onChangeText={(text) => setPassword(text)}
       />
       <TouchableOpacity style={styles.button} onPress={onHandleSignup}>
-        <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}> Sign Up</Text>
+        <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}> Đăng ký</Text>
       </TouchableOpacity>
       <View style={{marginTop: 20, flexDirection: 'row', alignItems: 'center', alignSelf: 'center'}}>
-        <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Don't have an account? </Text>
+        <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Đã có tài khoản? </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-          <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Log In</Text>
+          <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Đăng nhập</Text>
         </TouchableOpacity>
       </View>
       </SafeAreaView>
@@ -57,6 +57,7 @@ const onHandleSignup = () => {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

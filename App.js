@@ -1,3 +1,7 @@
+import 'react-native-get-random-values';
+import 'react-native-gesture-handler';
+import 'react-native-reanimated';
+
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';

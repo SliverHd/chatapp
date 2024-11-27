@@ -12,8 +12,8 @@ export default function Login({ navigation }) {
   const onHandleLogin = () => {
     if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
-        .then(() => console.log("Login success"))
-        .catch((err) => Alert.alert("Login error", err.message));
+        .then(() => console.log("Đăng nhập thành công"))
+        .catch((err) => Alert.alert("Lỗi đăng nhập", err.message));
     }
   };
   
@@ -22,10 +22,10 @@ export default function Login({ navigation }) {
       <Image source={backImage} style={styles.backImage} />
       <View style={styles.whiteSheet} />
       <SafeAreaView style={styles.form}>
-        <Text style={styles.title}>Log In</Text>
+        <Text style={styles.title}>Đăng nhập</Text>
          <TextInput
         style={styles.input}
-        placeholder="Enter email"
+        placeholder="Nhập email"
         autoCapitalize="none"
         keyboardType="email-address"
         textContentType="emailAddress"
@@ -35,7 +35,7 @@ export default function Login({ navigation }) {
       />
       <TextInput
         style={styles.input}
-        placeholder="Enter password"
+        placeholder="Nhập mật khẩu"
         autoCapitalize="none"
         autoCorrect={false}
         secureTextEntry={true}
@@ -44,12 +44,12 @@ export default function Login({ navigation }) {
         onChangeText={(text) => setPassword(text)}
       />
       <TouchableOpacity style={styles.button} onPress={onHandleLogin}>
-        <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}> Log In</Text>
+        <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}> Đăng nhập</Text>
       </TouchableOpacity>
       <View style={{marginTop: 20, flexDirection: 'row', alignItems: 'center', alignSelf: 'center'}}>
-        <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Don't have an account? </Text>
+        <Text style={{color: 'gray', fontWeight: '600', fontSize: 14}}>Chưa có tài khoản? </Text>
         <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
-          <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Sign Up</Text>
+          <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}> Đăng ký</Text>
         </TouchableOpacity>
       </View>
       </SafeAreaView>
@@ -57,6 +57,7 @@ export default function Login({ navigation }) {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
